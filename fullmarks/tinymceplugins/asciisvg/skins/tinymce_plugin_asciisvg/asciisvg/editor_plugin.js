@@ -28,10 +28,11 @@
                 // Embed generated SVG as CDATA
                 var svgnode = node.getElementsByTagName('svg')[0];
                 var svg = ed.dom.getOuterHTML(svgnode);
-                svg = svg.replace(/>/g,"&gt;");
-                svg = svg.replace(/</g,"&lt;");
-                var cdata = '<![CDATA[' + svg + ']]>';
-                var spansvg = ed.dom.create('span', {'class' : 'SVG'}, cdata);
+//                 svg = svg.replace(/>/g,"&gt;");
+//                 svg = svg.replace(/</g,"&lt;");
+//                 var cdata = '<![CDATA[' + svg + ']]>';
+//                 var spansvg = ed.dom.create('span', {'class' : 'SVG'}, cdata);
+                var spansvg = ed.dom.create('span', {'class': 'SVG', 'data-asciisvg': encodeURI(svg)});
                 node.appendChild(spansvg)
 
             });

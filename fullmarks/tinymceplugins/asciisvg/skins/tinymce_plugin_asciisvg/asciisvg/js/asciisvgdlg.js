@@ -73,11 +73,12 @@ var AsciisvgDialog = {
             // Store generated SVG in CDATA
             var svgnode = svgcontainer.getElementsByTagName('svg')[0];
             var svg = ed.dom.getOuterHTML(svgnode);
-            svg = svg.replace(/>/g,"&gt;");
-            svg = svg.replace(/</g,"&lt;");
-            var cdata = '<![CDATA[' + svg + ']]>';
+//             svg = svg.replace(/>/g,"&gt;");
+//             svg = svg.replace(/</g,"&lt;");
+//             var cdata = '<![CDATA[' + svg + ']]>';
             var spansvg = svgcontainer.getElementsByClassName('SVG')[0];
-            spansvg.innerHTML = cdata;
+//             spansvg.innerHTML = cdata;
+            ed.dom.setAttrib(spansvg,"data-asciisvg",encodeURI(svg));
 
             ed.dom.setAttrib(picture,"script",this.script);
             ed.dom.setAttrib(picture,"width",this.width);
