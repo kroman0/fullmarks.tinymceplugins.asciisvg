@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.3'
+version = '1.4qg'
 
 setup(name='fullmarks.tinymceplugins.asciisvg',
       version=version,
